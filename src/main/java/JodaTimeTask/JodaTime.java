@@ -27,16 +27,16 @@ public class JodaTime{
         task4(precondition(currentDate),formatter_YYYY_MM_DD,longFormatter);
         task5(precondition(currentDate),formatter_YYYY_MM_DD,longFormatter);
         task6(precondition(currentDate),formatter_YYYY_MM_DD,longFormatter);
+        task8(DateTime.parse(precondition(currentDate)));
 //        task7(precondition(currentDate),formatter_YYYY_MM_DD,longFormatter);
-//        task8(precondition(currentDate),formatter_YYYY_MM_DD,longFormatter);
 
 
 
 
         LocalDate dateForCompare = new LocalDate(968498900000L);
         String dateInFutureFormatted = formatter_DD_MM_YYYY.print(dateForCompare);
-        boolean isBefore = currentDate.isBefore(dateForCompare);
-        System.out.println(currentDate + " is before " + dateInFutureFormatted + " : " + isBefore);
+//        boolean isBefore = currentDate.isBefore(dateForCompare);
+//        System.out.println(currentDate + " is before " + dateInFutureFormatted + " : " + isBefore);
 
         DayOfWeek dayOfWeek = DayOfWeek.of(currentDate.getDayOfWeek());
         System.out.println("Current day of week is " + dayOfWeek);
@@ -64,5 +64,8 @@ public class JodaTime{
     }
     private static String task6(String date, DateTimeFormatter inputFormatter, DateTimeFormatter outputFormatter) {
         return outputFormatter.print(inputFormatter.parseDateTime(date).millisOfDay().withMaximumValue().getMillis());
+    }
+    private static String task8(DateTime currentDate) {
+        return String.valueOf(DayOfWeek.of(currentDate.getDayOfWeek()));
     }
 }
