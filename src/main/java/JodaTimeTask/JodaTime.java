@@ -7,6 +7,8 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.time.DayOfWeek;
 
+import static javax.xml.bind.DatatypeConverter.parseDateTime;
+
 public class JodaTime{
     private static DateTimeFormatter formatter_YYYY_MM_DD = DateTimeFormat.forPattern("yyyy-MM-dd");
     private static DateTimeFormatter formatter_MM_DD_YYYY = DateTimeFormat.forPattern("MM/dd/yyyy");
@@ -24,9 +26,10 @@ public class JodaTime{
         task3(precondition(currentDate), formatter_YYYY_MM_DD, formatter_DD_MM_YYYY);
         task4(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
         task5(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
-        task6(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
+        task6(precondition(currentDate), DateTimeFormat.forPattern("yyyy-MM-dd.HH.mm.ss.SS"), longFormatter);
+//        task7(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
         task8(DateTime.parse(precondition(currentDate)));
-//        task7(precondition(currentDate),formatter_YYYY_MM_DD,longFormatter);
+
 
         LocalDate dateForCompare = new LocalDate(968498900000L);
         String dateInFutureFormatted = formatter_DD_MM_YYYY.print(dateForCompare);
@@ -58,8 +61,8 @@ public class JodaTime{
         return outputFormatter.print(inputFormatter.parseDateTime(date).millisOfDay().withMaximumValue().getMillis());
     }
 
-    private static String task6(String date, DateTimeFormatter inputFormatter, DateTimeFormatter outputFormatter) {
-        return outputFormatter.print(inputFormatter.parseDateTime(date).millisOfDay().withMaximumValue().getMillis());
+    private static String task6(String date, DateTimeFormatter longFormatter, DateTimeFormatter outputFormatter) {
+        return outputFormatter.print(longFormatter.parseDateTime(date).millisOfDay().withMaximumValue().getMillis());
     }
 
     private static String task8(DateTime currentDate) {
