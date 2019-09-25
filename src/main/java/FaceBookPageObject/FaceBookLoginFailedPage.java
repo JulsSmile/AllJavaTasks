@@ -1,4 +1,4 @@
-package PageObject;
+package FaceBookPageObject;
 
 public class FaceBookLoginFailedPage{
 }
