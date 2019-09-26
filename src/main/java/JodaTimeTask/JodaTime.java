@@ -26,7 +26,7 @@ public class JodaTime{
         task3(precondition(currentDate), formatter_YYYY_MM_DD, formatter_DD_MM_YYYY);
         task4(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
         task5(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
-        task6(DateTimeFormat.forPattern("yyyy-MM-dd.HH.mm.ss.SS"));
+        task6(precondition(currentDate), DateTimeFormat.forPattern("yyyy-MM-dd.HH.mm.ss.SS"), longFormatter);
 //        task7(precondition(currentDate), formatter_YYYY_MM_DD, longFormatter);
         task8(DateTime.parse(precondition(currentDate)));
 
