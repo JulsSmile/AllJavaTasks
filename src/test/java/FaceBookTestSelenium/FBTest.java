@@ -13,7 +13,7 @@ public class FBTest{
     public static void main(String[] args) {
         String BaseURL = "https://google.com";
         String searchWord = "Facebook";
-        String email = "emailforfecebook.moc";
+        String email = "emailforfacebook.moc";
         String password = "bdgdgdgr";
 
         WebDriver driver;
@@ -24,7 +24,8 @@ public class FBTest{
         driver.get(BaseURL);
         WebElement search = driver.findElement(By.name("q"));
         search.sendKeys(searchWord);
-        search.sendKeys(Keys.ENTER);
+//        search.sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//*[@class='gNO89b']")).click();
         WebElement logIn = driver.findElement(By.xpath("//*[@id='rso']//a"));
         logIn.click();
 
