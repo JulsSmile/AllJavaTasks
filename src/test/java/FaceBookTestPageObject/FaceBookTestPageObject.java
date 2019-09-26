@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class FaceBookTestPageObject{
     private String searchText = "Facebook";
 
@@ -24,8 +26,10 @@ public class FaceBookTestPageObject{
         googleSearchPage.searchForText("Facebook");
 
         GoogleSearchResultsList googleSearchResultsList = new GoogleSearchResultsList(driver);
+        driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MICROSECONDS );
 //       add waiter
         googleSearchResultsList.getFaceBookLink().click();
+        driver.manage().timeouts().pageLoadTimeout(4000, TimeUnit.MILLISECONDS);
 //add waiter
         FaceBookLoginForm faceBookLoginForm = new FaceBookLoginForm(driver);
         faceBookLoginForm.loginToFacebook("emailforfacebook@jgfd.com", "HardPass");
