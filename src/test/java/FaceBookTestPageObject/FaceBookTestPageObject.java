@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FaceBookTestPageObject{
     private String searchText = "Facebook";
+
     public static void main(String[] args) {
 
         WebDriver driver;
@@ -23,10 +24,11 @@ public class FaceBookTestPageObject{
         googleSearchPage.searchForText("Facebook");
 
         GoogleSearchResultsList googleSearchResultsList = new GoogleSearchResultsList(driver);
+//       add waiter
         googleSearchResultsList.getFaceBookLink().click();
-
+//add waiter
         FaceBookLoginForm faceBookLoginForm = new FaceBookLoginForm(driver);
-        faceBookLoginForm.loginToFacebook("emailforfacebook@jgfd.com","HardPass");
+        faceBookLoginForm.loginToFacebook("emailforfacebook@jgfd.com", "HardPass");
 
         FaceBookLoginFailedPage faceBookLoginFailedPage = new FaceBookLoginFailedPage(driver);
         WebElement message = faceBookLoginFailedPage.getErrorMessage();
@@ -39,7 +41,5 @@ public class FaceBookTestPageObject{
         }
         driver.close();
     }
-
-
-    }
+}
 
