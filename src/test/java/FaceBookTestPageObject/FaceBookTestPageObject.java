@@ -20,7 +20,6 @@ public class FaceBookTestPageObject{
 
         GoogleSearchResultsList googleSearchResultsList = new GoogleSearchResultsList();
 
-
         googleSearchResultsList.getFaceBookLink().click();
 
     }
